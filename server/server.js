@@ -2,8 +2,8 @@ const app = require('express')();
 const session = require('express-session');
 const { json } = require('body-parser');
 const massive = require('massive');
-const massive = require('massive');
-const massive = require('massive');
+const config = require('./config.js');
+const masterRoutes = require('./masterRoutes');
 
 
 app.use(json())
