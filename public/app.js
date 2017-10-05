@@ -1,41 +1,44 @@
 angular.module('app', ['ui.router'])
   .config(function($stateProvider, $urlRouterProvider) {
+    
+    $urlRouterProvider
+        .otherwise('/landing');
+    
     $stateProvider
       .state('adminPortal', {
         url:'/adminPortal',
-        templateUrl: "views/adminPortal.html",
+        templateUrl: "./views/adminPortal/adminPortal.html",
         controller: 'adminPortalCtrl'
       })
       .state('cart', {
         url:'/cart',
-        templateUrl: "views/cart.html",
+        templateUrl: "./views/cart/cart.html",
         controller: 'cartCtrl'
       })
       .state('checkout', {
         url:'/checkout',
-        templateUrl: "views/checkout.html",
+        templateUrl: "./views/checkout/checkout.html",
         controller: 'checkoutCtrl'
       })
       .state('landing', {
         url:'/landing',
-        templateUrl: "views/landing.html",
+        templateUrl: "./views/landing/landing.html",
         controller: 'landingCtrl'
       })
       .state('productDetails', {
         url:'/productDetails',
-        templateUrl: "views/productDetails.html",
+        templateUrl: "./views/productDetails/productDetails.html",
         controller: 'productDetailsCtrl'
       })
       .state('systemProducts', {
         url:'/systemProducts',
-        templateUrl: "views/systemProducts.html",
+        templateUrl: "./views/systemProducts/systemProducts.html",
         controller: 'systemProductsCtrl'
       })
       .state('systemSelection', {
         url:'/systemSelection',
-        templateUrl: "views/systemSelection.html",
+        templateUrl: "./views/systemSelection/systemSelection.html",
         controller: 'systemSelectionCtrl'
       })
-      $urlRouterProvider
-        .otherwise('/landing');
+    
   })
