@@ -1,0 +1,111 @@
+<!-- PRODUCT IMAGE -->
+<div>
+    <img ng-src="{{ product.img }}" alt="">
+</div>
+
+<!-- METAL SELECTION -->
+<form>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Shop provided metal?
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" ng-click="metalSelection = false">Yes</a>
+            <a class="dropdown-item" ng-click="metalSelection = true">No</a>
+        </div>
+    </div>
+    <br>
+    <div ng-hide="metalSelection">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"     aria-expanded="false">
+            {{ manufacturer }}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" ng-click="gaugeSelection = false; manufacturer = 'Berridge'; order.metal.manufacturer = 'Berridge'">Berridge</a>
+                <a class="dropdown-item" ng-click="gaugeSelection = false; manufacturer = 'Peterson'; order.metal.manufacturer = 'Peterson'">Peterson</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"     aria-expanded="false"  ng-disabled="gaugeSelection">
+            {{ gauge }}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" ng-click="gauge = '22ga'; colorSelection = false; order.metal.gauge = 22">22ga</a>
+                <a class="dropdown-item" ng-click="gauge = '24ga'; colorSelection = false; order.metal.gauge = 24">24ga</a>
+                <a class="dropdown-item" ng-click="gauge = '26ga'; colorSelection = false; order.metal.gauge = 26">26ga</a>
+            </div>
+        </div>    
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"     aria-expanded="false" ng-disabled="colorSelection">
+            {{ color }}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" ng-click="color = 'red'; order.metal.color = 'red'" value="red">red</a>
+                <a class="dropdown-item" ng-click="color = 'white'; order.metal.color = 'white'" value="white">white</a>
+                <a class="dropdown-item" ng-click="color = 'blue'; order.metal.color = 'blue'" value="blue">blue</a>
+                <!-- Will be used when backend and db gets set up -->
+                <!-- <ul ng-repeat="color in colors">
+                    <li ng-click="color = {{ color.name }}" ng-model="order.metal.color" value="{{ color.name }}">{{ color.name }}</li>
+                </ul> -->
+            </div>
+        </div>
+    </div>
+</form>
+<br>
+
+<!-- DIMENSION INPUT BOXES -->
+<!-- Need to add some way to change qty of input boxes based on product   -->
+<label for="basic-url">Dimensions:</label>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">A</span>
+  <input type="text" class="form-control" placeholder="Dimension A" aria-label="Username" aria-describedby="basic-addon1" ng-bind="order.dimension.a">
+</div>
+<br>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">B</span>
+  <input type="text" class="form-control" placeholder="Dimension B" aria-label="Username" aria-describedby="basic-addon1" ng-bind="order.dimension.b">
+</div>
+<br>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">C</span>
+  <input type="text" class="form-control" placeholder="Dimension C" aria-label="Username" aria-describedby="basic-addon1" ng-bind="order.dimension.c">
+</div>
+<br>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">D</span>
+  <input type="text" class="form-control" placeholder="Dimension D" aria-label="Username" aria-describedby="basic-addon1" ng-bind="order.dimension.d">
+</div>
+<br>
+
+<!-- QTY INPUT BOX -->
+<label for="basic-url">Quantity:</label>
+<div class="input-group">
+  <input type="text" class="form-control" placeholder="Footage" aria-label="Username" aria-describedby="basic-addon1" ng-bind="order.quantity">
+  <span class="input-group-addon" id="basic-addon1">LF</span>
+</div>
+<br>
+
+<!-- HEM OPEN/CLOSE SELECTION -->
+<label for="basic-url">Hem:</label>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     {{ hem }}
+  </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" ng-click="hem = 'Open'; order.hem = open">Open</a>
+      <a class="dropdown-item" ng-click="hem = 'Close'; order.hem = closed">Close</a>
+    </div>
+</div>
+<br>
+
+<!-- ADDITIONAL INFO -->
+<form>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1"></label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" ng-bind="order.additionalInfo" placeholder="ADDITIONAL INFO"></textarea>
+    </div>
+</form>
+<br>
+
+<!-- SUBMIT ORDER -->
+<button type="button" class="btn btn-primary btn-lg btn-block" ng-click="submitOrder()">Submit Order</button>
