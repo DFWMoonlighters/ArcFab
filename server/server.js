@@ -13,9 +13,9 @@ app.use(session(config.session))
 
 
 app.use("/", express.static(__dirname + '/public'))
-// massive(config.postgres).then(dbInstance => {
-//     app.set('db', dbInstance)
-// })
+massive(config.postgres).then(dbInstance => {
+    app.set('db', dbInstance)
+})
 
 app.listen(port, () => {
     console.log(`Arc Fab listening on port: ${port}`)
