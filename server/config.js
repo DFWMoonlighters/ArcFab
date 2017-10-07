@@ -1,5 +1,5 @@
 module.exports = {
-    postgres: 'postgres://vm2@localhost:5432/arcfab',
+    postgres: 'postgres://gxjqoacz:VdujKxlkqWmEmykpKSj7EQYCxDGRI7V_@stampy.db.elephantsql.com:5432/gxjqoacz',
 
     session: {
     secret: 'Moonlighters',
