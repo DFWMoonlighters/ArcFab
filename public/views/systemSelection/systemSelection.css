@@ -1,0 +1,20 @@
+.system-selection-main-div {
+  background-color: grey;
+}
+.system-selection-product-div {
+  display: flex;
+  border: 3px solid black;
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+}
+.system-selection-image {
+  height: 200px;
+}
+.system-selection-product-title-div {
+  padding: 5vw;
+  width: 100%;
+  text-align: center;
+  justify-content: space-around;
+  font-size: 300%;
+}
