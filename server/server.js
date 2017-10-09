@@ -11,12 +11,19 @@ const masterRoutes = require('./masterRoutes');
 app.use(json())
 app.use(session(config.session))
 
+massive(config.postgres)
+    .then(instance => {
+        app.set('db', instance)
+    })
+    .catch( err => {
+        console.log( err )
+    })
 
 app.use("/", express.static(__dirname + '/public'))
-massive(config.postgres).then(dbInstance => {
-    app.set('db', dbInstance)
-})
+
+masterRoutes( app )
 
 app.listen(port, () => {
     console.log(`Arc Fab listening on port: ${port}`)
 })
+
