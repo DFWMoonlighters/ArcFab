@@ -6,9 +6,9 @@ angular.module('app')
     }
 
     this.submitOrder = ( order ) => {
-      $http.post('/api/order', { order })
+      $http.post('http://localhost:3001/api/order', { order })
         .then(response => {
-          console.log(response)
+          console.log('order submited', response)
         })
         .catch(error => {
           console.log(error)
