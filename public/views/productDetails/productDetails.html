@@ -34,7 +34,7 @@
                 <a class="dropdown-item" ng-click="gauge = '24ga'; colorSelection = false; order.metal.gauge = 24">24ga</a>
                 <a class="dropdown-item" ng-click="gauge = '26ga'; colorSelection = false; order.metal.gauge = 26">26ga</a>
             </div>
-        </div>    
+        </div>
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"     aria-expanded="false" ng-disabled="colorSelection">
             {{ color }}
@@ -58,29 +58,29 @@
 <label for="basic-url">Dimensions:</label>
 <div class="input-group">
   <span class="input-group-addon" id="basic-addon1">A</span>
-  <input type="text" class="form-control" placeholder="Dimension A" aria-label="Username" aria-describedby="basic-addon1" ng-bind="order.dimension.a">
+  <input type="text" class="form-control" placeholder="Dimension A" aria-label="Username" aria-describedby="basic-addon1" ng-model="order.dimension.a">
 </div>
 <br>
 <div class="input-group">
   <span class="input-group-addon" id="basic-addon1">B</span>
-  <input type="text" class="form-control" placeholder="Dimension B" aria-label="Username" aria-describedby="basic-addon1" ng-bind="order.dimension.b">
+  <input type="text" class="form-control" placeholder="Dimension B" aria-label="Username" aria-describedby="basic-addon1" ng-model="order.dimension.b">
 </div>
 <br>
 <div class="input-group">
   <span class="input-group-addon" id="basic-addon1">C</span>
-  <input type="text" class="form-control" placeholder="Dimension C" aria-label="Username" aria-describedby="basic-addon1" ng-bind="order.dimension.c">
+  <input type="text" class="form-control" placeholder="Dimension C" aria-label="Username" aria-describedby="basic-addon1" ng-model="order.dimension.c">
 </div>
 <br>
 <div class="input-group">
   <span class="input-group-addon" id="basic-addon1">D</span>
-  <input type="text" class="form-control" placeholder="Dimension D" aria-label="Username" aria-describedby="basic-addon1" ng-bind="order.dimension.d">
+  <input type="text" class="form-control" placeholder="Dimension D" aria-label="Username" aria-describedby="basic-addon1" ng-model="order.dimension.d">
 </div>
 <br>
 
 <!-- QTY INPUT BOX -->
 <label for="basic-url">Quantity:</label>
 <div class="input-group">
-  <input type="text" class="form-control" placeholder="Footage" aria-label="Username" aria-describedby="basic-addon1" ng-bind="order.quantity">
+  <input type="text" class="form-control" placeholder="Footage" aria-label="Username" aria-describedby="basic-addon1" ng-model="order.quantity">
   <span class="input-group-addon" id="basic-addon1">LF</span>
 </div>
 <br>
@@ -92,8 +92,8 @@
      {{ hem }}
   </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" ng-click="hem = 'Open'; order.hem = open">Open</a>
-      <a class="dropdown-item" ng-click="hem = 'Close'; order.hem = closed">Close</a>
+      <a class="dropdown-item" ng-click="hem = 'Open'">Open</a>
+      <a class="dropdown-item" ng-click="hem = 'Close'">Close</a>
     </div>
 </div>
 <br>
@@ -102,10 +102,10 @@
 <form>
     <div class="form-group">
         <label for="exampleFormControlTextarea1"></label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" ng-bind="order.additionalInfo" placeholder="ADDITIONAL INFO"></textarea>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" ng-model="order.additionalInfo" placeholder="ADDITIONAL INFO"></textarea>
     </div>
 </form>
 <br>
 
 <!-- SUBMIT ORDER -->
-<button type="button" class="btn btn-primary btn-lg btn-block" ng-click="submitOrder()">Submit Order</button>
+<button type="button" class="btn btn-primary btn-lg btn-block" ng-click="submitOrder(order)">Submit Order</button>

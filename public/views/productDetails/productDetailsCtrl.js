@@ -1,6 +1,6 @@
 angular.module('app')
   .controller("productDetailsCtrl", function($scope, productDetailsSrv, $stateParams) {
-    
+
     $scope.order = {
       metal: {
         manufacturer: "",
@@ -8,16 +8,16 @@ angular.module('app')
         color: "",
       },
       dimension: {
-        a: 0,
-        b: 0,
-        c: 0,
-        d: 0
+        a: "",
+        b: "",
+        c: "",
+        d: ""
       },
-      quantity: 0,
+      quantity: "",
       hem: "",
       additionalInfo: ""
     }
-    
+
     // Gets info on product selected
     // Will not work until the db is set up.
     productDetailsSrv.getProductInfo($stateParams.id)
@@ -38,13 +38,14 @@ angular.module('app')
     $scope.metalSelection = true;
     $scope.gaugeSelection = true;
     $scope.colorSelection = true;
-    
+
     // Dimension input boxes
-    // Need to add some way to change qty of boxes based on product  
+    // Need to add some way to change qty of boxes based on product
 
     // Submit Order
     $scope.submitOrder = (order) => {
-      console.log("submited order:", order)
+      order.hem = $scope.hem;
+      console.log("submited order:", order);
       productDetailsSrv.submitOrder(order)
     }
 

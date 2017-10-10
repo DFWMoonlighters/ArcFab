@@ -6,8 +6,9 @@ const { json } = require('body-parser');
 const massive = require('massive');
 const config = require('./config.js');
 const masterRoutes = require('./masterRoutes');
+const cors = require('cors');
 
-
+app.use(cors())
 app.use(json())
 app.use(session(config.session))
 
@@ -26,4 +27,3 @@ masterRoutes( app )
 app.listen(port, () => {
     console.log(`Arc Fab listening on port: ${port}`)
 })
-
