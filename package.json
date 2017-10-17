@@ -1,7 +1,6 @@
 {
   "name": "arc-fab-app",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,5 +13,15 @@
     "express": "^4.16.1",
     "express-session": "^1.15.6",
     "massive": "^4.3.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DFWMoonlighters/ArcFab.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/DFWMoonlighters/ArcFab/issues"
+  },
+  "homepage": "https://github.com/DFWMoonlighters/ArcFab#readme",
+  "description": ""
 }
