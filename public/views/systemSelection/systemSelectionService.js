@@ -4,7 +4,5 @@ angular.module('app')
     this.getSystems = () => {
       return $http.get('http://localhost:3001/api/systems');
     }
-
-
-
+    
   });

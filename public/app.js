@@ -31,7 +31,7 @@ angular.module('app', ['ui.router'])
         controller: 'productDetailsCtrl'
       })
       .state('systemProducts', {
-        url:'/systemProducts',
+        url:'/systemProducts/:system',
         templateUrl: "./views/systemProducts/systemProducts.html",
         controller: 'systemProductsCtrl'
       })
