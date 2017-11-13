@@ -11,10 +11,12 @@ module.exports = {
           color = order.metal.color,
           hem = order.hem,
           qty = order.quantity;
+          userId = order.userID;
+          addInfo = order.additionalInfo;
           // need to set it up so if the customer will provide the metal,
           // man will be "Customer Provided" instead of undefined...
         req.app.get('db')
-          .post_order(qty, a, b, c, d, hem, man, gauge, color)
+          .post_order(qty, a, b, c, d, hem, man, gauge, color, userId, addInfo)
             .then( response => {
               res.status(200).json( response )
             })

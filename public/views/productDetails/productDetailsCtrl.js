@@ -45,6 +45,7 @@ angular.module('app')
     // Submit Order
     $scope.submitOrder = (order) => {
       order.hem = $scope.hem;
+      order.userID = Cookies.get('arcfab');
       console.log("submited order:", order);
       productDetailsSrv.submitOrder(order)
     }

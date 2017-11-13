@@ -1,9 +1,9 @@
 angular.module('app', ['ui.router'])
   .config(function($stateProvider, $urlRouterProvider) {
-    
+
     $urlRouterProvider
         .otherwise('/landing');
-    
+
     $stateProvider
       .state('adminPortal', {
         url:'/adminPortal',
@@ -40,5 +40,8 @@ angular.module('app', ['ui.router'])
         templateUrl: "./views/systemSelection/systemSelection.html",
         controller: 'systemSelectionCtrl'
       })
-    
+
+  })
+  .factory('cookies', function() {
+    return Cookies.noConflict();
   })
