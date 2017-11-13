@@ -5,10 +5,12 @@
   </div>
   <h1>Products</h1>
     <div ng-repeat="product in products" class="system-selection-product-div">
+    <a ui-sref="productDetails({ id: product.id })">
       <img class="system-selection-image"
           src="https://upload.wikimedia.org/wikipedia/en/2/2e/Donald_Duck_-_temper.png" alt="">
       <div class="system-selection-product-title-div">
         {{ product.name }}
+      </div>
+    </a>
     </div>
-  </div>
 </div>
