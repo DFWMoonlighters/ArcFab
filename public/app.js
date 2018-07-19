@@ -26,12 +26,12 @@ angular.module('app', ['ui.router'])
         controller: 'landingCtrl'
       })
       .state('productDetails', {
-        url:'/productDetails',
+        url:'/productDetails/:id',
         templateUrl: "./views/productDetails/productDetails.html",
         controller: 'productDetailsCtrl'
       })
       .state('systemProducts', {
-        url:'/systemProducts',
+        url:'/systemProducts/:system',
         templateUrl: "./views/systemProducts/systemProducts.html",
         controller: 'systemProductsCtrl'
       })

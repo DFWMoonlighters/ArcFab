@@ -18,14 +18,15 @@ angular.module('app')
       additionalInfo: ""
     }
 
-    // Gets info on product selected
-    // Will not work until the db is set up.
-    productDetailsSrv.getProductInfo($stateParams.id)
+    const productId = $stateParams.id
+
+    productDetailsSrv.getProductInfo( productId )
       .then( product =>{
-        $scope.product = product;
+        console.log( "productDetailsCtrl product:", product.data[0] )
+        $scope.product = product.data[0];
       })
       .catch(err => {
-        console.log('productDetailCtrl getProductInfo: ', err)
+        console.log('productDetailCtrl getProductInfo error:', err)
       })
 
     // Button labels will change based on selection

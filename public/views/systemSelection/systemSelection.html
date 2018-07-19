@@ -5,10 +5,11 @@
   </div>
   <h1>Select your System</h1>
     <div ng-repeat="product in productList" class="system-selection-product-div">
-      <img class="system-selection-image"
-          src="https://upload.wikimedia.org/wikipedia/en/2/2e/Donald_Duck_-_temper.png" alt="">
+    <a ui-sref="systemProducts({ system: product.system })">
+      <img class="system-selection-image" src="https://upload.wikimedia.org/wikipedia/en/2/2e/Donald_Duck_-_temper.png" alt="">
       <div class="system-selection-product-title-div">
         {{ product.system_type}}
+      </div>
+    </a>
     </div>
-  </div>
 </div>

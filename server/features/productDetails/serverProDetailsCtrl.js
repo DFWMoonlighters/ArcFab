@@ -1,4 +1,18 @@
 module.exports = {
+    
+    getProductInfo: function( req, res, next ) {
+
+      let productId = req.params.id
+      req.app.get('db')
+        .get_product_info( productId )
+          .then( response => {
+            res.status(200).json( response )
+          })
+          .catch( err => {
+            console.log( "getProductInfo error:", err )
+          })
+
+    },
 
     postOrder: function( req, res, next ) {
       let order = req.body.order,
@@ -21,7 +35,7 @@ module.exports = {
               res.status(200).json( response )
             })
             .catch( err => {
-              console.log( err )
+              console.log( "postOrder error:", err )
             })
     }
 
